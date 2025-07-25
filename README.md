@@ -115,7 +115,7 @@ src/
 
 static/                # Static assets
 ├── manifest.json      # Chrome extension manifest
-└── favicon.svg        # Extension icon
+└── favicon.png        # Extension icon
 ```
 
 ## Features

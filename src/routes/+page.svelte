@@ -20,7 +20,7 @@
 </script>
 
 <svelte:head>
-	<title>Dinks New Tab</title>
+	<title>New Tab</title>
 </svelte:head>
 
 <main class="container mx-auto min-h-screen">
