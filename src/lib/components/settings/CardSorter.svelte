@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { getGlobalContext } from '$lib/contexts/context.svelte';
-	import { getNewOrder, moveCardDown, moveCardUp, sortCards } from '$lib/utils';
+	import { getNewOrder } from '$lib/utils';
 
 	const context = getGlobalContext();
 
@@ -10,7 +10,6 @@
 	function handleToggleCustom() {
 		context.useCustomOrder = !context.useCustomOrder;
 		context.cardOrder = context.useCustomOrder ? context.defaultOrder : [];
-		context.cards = sortCards(context.cards, context.defaultOrder);
 	}
 
 	function handleDragStart(index: number) {
@@ -43,21 +42,20 @@
 
 		event.preventDefault();
 		context.cardOrder = getNewOrder(draggedIndex, dropIndex, context.cardOrder);
-		context.cards = sortCards(context.cards, context.cardOrder);
 		draggedIndex = null;
 		dragOverIndex = null;
 	}
 
 	function handleMoveCardUp(index: number) {
-		const newData = moveCardUp(index, context.cardOrder, context.cards);
-		context.cardOrder = newData.cardOrder;
-		context.cards = newData.cards;
+		if (index > 0) {
+			context.cardOrder = getNewOrder(index, index - 1, context.cardOrder);
+		}
 	}
 
 	function handleMoveCardDown(index: number) {
-		const newData = moveCardDown(index, context.cardOrder, context.cards);
-		context.cardOrder = newData.cardOrder;
-		context.cards = newData.cards;
+		if (index < context.cards.length - 1) {
+			context.cardOrder = getNewOrder(index, index + 1, context.cardOrder);
+		}
 	}
 </script>
 

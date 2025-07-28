@@ -3,11 +3,13 @@ import { getBookmarkCards, sortCards } from '$lib/utils';
 import type { BookmarkCard, Theme } from '$lib/types';
 
 export class Context {
+	defaultOrder: string[] = [];
+	defaultCards: BookmarkCard[] = [];
+
 	theme = $state<Theme>('system');
 	cardOrder = $state<string[]>([]);
-	defaultOrder = $state<string[]>([]);
 	useCustomOrder = $state(false);
-	cards = $state<BookmarkCard[]>([]);
+	cards = $derived<BookmarkCard[]>(sortCards(this.defaultCards, this.cardOrder));
 	loading = $state(true);
 	error = $state<string | null>(null);
 
@@ -30,11 +32,12 @@ export class Context {
 		const cards = await getBookmarkCards();
 		const defaultOrder = cards.map((card) => card.id);
 
+		this.defaultOrder = defaultOrder;
+		this.defaultCards = cards;
+
 		this.theme = theme as Theme;
 		this.cardOrder = cardOrder;
-		this.defaultOrder = defaultOrder;
 		this.useCustomOrder = useCustomOrder;
-		this.cards = sortCards(cards, cardOrder);
 		this.loading = false;
 	}
 }

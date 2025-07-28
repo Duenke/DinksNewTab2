@@ -108,24 +108,6 @@ export function getNewOrder(fromIndex: number, toIndex: number, oldOrder: string
 	return newOrder;
 }
 
-export function moveCardUp(index: number, oldOrder: string[], cards: BookmarkCard[]) {
-	if (index > 0) {
-		const newOrder = getNewOrder(index, index - 1, oldOrder);
-		const newCards = sortCards(cards, newOrder);
-		return { cardOrder: newOrder, cards: newCards };
-	}
-	return { cardOrder: oldOrder, cards };
-}
-
-export function moveCardDown(index: number, oldOrder: string[], cards: BookmarkCard[]) {
-	if (index < cards.length - 1) {
-		const newOrder = getNewOrder(index, index + 1, oldOrder);
-		const newCards = sortCards(cards, newOrder);
-		return { cardOrder: newOrder, cards: newCards };
-	}
-	return { cardOrder: oldOrder, cards };
-}
-
 export const themes = [
 	{ value: 'light', label: 'Light', icon: '☀️' },
 	{ value: 'dark', label: 'Dark', icon: '🌙' },
