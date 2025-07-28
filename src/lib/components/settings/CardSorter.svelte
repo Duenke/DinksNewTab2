@@ -79,7 +79,6 @@
 		</button>
 	</div>
 
-	<!-- Bookmark Cards List -->
 	<div class="cards-list">
 		{#each context.cards as card, index (card.id)}
 			<div

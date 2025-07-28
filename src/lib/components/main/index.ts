@@ -1,4 +1,4 @@
-// place files you want to import through the `$lib/components` alias in this folder.
+// place files you want to import through the `$lib/components/main` alias in this folder.
 export { default as Card } from './Card.svelte';
 export { default as EmptyFilterPage } from './EmptyFilterPage.svelte';
 export { default as EmptyPage } from './EmptyPage.svelte';
