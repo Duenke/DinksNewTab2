@@ -6,6 +6,18 @@ A beautiful Chromium extension that displays all your bookmark folders on the ne
 
 This extension replaces your browser's new tab page with a clean, card-based interface showing all your bookmark folders. Instead of navigating through bookmark menus, you can see everything at a glance and quickly access your saved links.
 
+## Installation
+
+### Get it from the Store
+
+Install directly from the Microsoft Edge Add-ons store:
+
+**[📦 Dinks New Tab - Microsoft Edge Add-ons](https://microsoftedge.microsoft.com/addons/detail/dinks-new-tab/kpjhoedlohmjcmmjhbpigommekpamkaa)**
+
+### Build from Source
+
+Alternatively, you can build and install the extension manually using the development setup below.
+
 ## Why Rewrite in 2025?
 
 This project was rewritten in 2025 as a fun exploration of modern web technologies:
