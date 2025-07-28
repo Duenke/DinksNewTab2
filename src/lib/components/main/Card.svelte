@@ -11,12 +11,8 @@
 	let { card }: Props = $props();
 </script>
 
-<div
-	class="h-full rounded-lg border border-gray-200 bg-white p-6 shadow-md transition-all duration-300 hover:-translate-y-1 hover:border-gray-300 hover:shadow-xl dark:border-gray-700 dark:bg-gray-800 dark:hover:border-gray-600"
->
-	<h2
-		class="mb-4 border-b border-gray-200 pb-2 text-xl font-semibold text-gray-800 dark:border-gray-600 dark:text-white"
-	>
+<div class="card">
+	<h2 class="title">
 		{card.title}
 	</h2>
 
@@ -31,3 +27,15 @@
 		{/each}
 	</div>
 </div>
+
+<style>
+	@reference "../../../app.css";
+
+	.card {
+		@apply h-full rounded-lg border border-gray-200 bg-white p-6 shadow-md transition-all duration-300 hover:-translate-y-1 hover:border-gray-300 hover:shadow-xl dark:border-gray-700 dark:bg-gray-800 dark:hover:border-gray-600;
+	}
+
+	.title {
+		@apply mb-4 border-b border-gray-200 pb-2 text-xl font-semibold text-gray-800 dark:border-gray-600 dark:text-white;
+	}
+</style>

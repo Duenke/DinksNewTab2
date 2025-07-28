@@ -1,5 +1,7 @@
+/* make tailwind globally available */
 @import 'tailwindcss';
 
+/* control light/dark theme with `dark` class on the root */
 @custom-variant dark (&:where(.dark, .dark *));
 
 html {

@@ -12,14 +12,26 @@
 	let { bookmarkCards }: Props = $props();
 </script>
 
-<div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+<div class="card-grid">
 	{#each bookmarkCards as card (card.id)}
 		<div
+			class="animation-card"
 			out:scale={{ duration: 200, easing: quintOut, start: 0.8 }}
 			animate:flip={{ duration: 400, easing: quintOut }}
-			class="h-full"
 		>
 			<Card {card} />
 		</div>
 	{/each}
 </div>
+
+<style>
+	@reference "../../../app.css";
+
+	.card-grid {
+		@apply grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4;
+	}
+
+	.animation-card {
+		@apply h-full;
+	}
+</style>

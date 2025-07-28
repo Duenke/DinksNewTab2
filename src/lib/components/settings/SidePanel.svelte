@@ -33,7 +33,6 @@
 
 	<div
 		class="fixed top-0 right-0 z-50 h-full w-80 border-l border-gray-200 bg-white shadow-2xl dark:border-gray-700 dark:bg-gray-800"
-		style="transform: translate3d(0, 0, 0); will-change: transform;"
 		transition:fly={{ x: 320, duration: 250, easing: quartOut }}
 	>
 		<Header {onClose} />
