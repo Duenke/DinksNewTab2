@@ -10,7 +10,7 @@ This extension replaces your browser's new tab page with a clean, card-based int
 
 ### Get it from the Store
 
-Install directly from the Microsoft Edge Add-ons store:
+Install directly from the store:
 
 **[📦 Dinks New Tab - Chrome Web Store](https://chromewebstore.google.com/detail/dinks-new-tab/ngkeojlahedhegiigncafecgoeiegbcl)**
 **[📦 Dinks New Tab - Microsoft Edge Add-ons](https://microsoftedge.microsoft.com/addons/detail/dinks-new-tab/kpjhoedlohmjcmmjhbpigommekpamkaa)**
